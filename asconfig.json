@@ -1,0 +1,15 @@
+{
+  "targets": {
+    "debug": {
+      "outFile": "pkg/core.debug.wasm",
+      "textFile": "pkg/core.debug.wat"
+    },
+    "release": {
+      "outFile": "pkg/core.wasm",
+      "textFile": "pkg/core.wat"
+    }
+  },
+  "options": {
+    "bindings": "esm"
+  }
+}

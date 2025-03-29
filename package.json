@@ -1,0 +1,28 @@
+{
+  "devDependencies": {
+    "@assemblyscript/loader": "^0.27.35",
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.13.14",
+    "@webassemblyjs/cli": "^1.14.1",
+    "assemblyscript": "^0.27.35",
+    "jest": "^29.7.0",
+    "nyc": "^17.1.0",
+    "ts-jest": "^29.3.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.2",
+    "wasm-pack": "^0.13.1"
+  },
+  "scripts": {
+    "test": "node --loader ts-node/esm test/wasm/simd-test.ts",
+    "test:coverage": "nyc --reporter=lcov npm test",
+    "asbuild": "asc assembly/index.ts -b pkg/core.wasm -t pkg/core.wat -O3",
+    "asbuild:debug": "asc assembly/index.ts -b pkg/core.debug.wasm -t pkg/core.debug.wat -O0 --debug",
+    "test:wasm": "jest tests/wasm.test.ts",
+    "start": "ts-node src/main.ts",
+    "add:license": "node scripts/add-license-headers.js",
+    "check:license": "node scripts/add-license-headers.js --check"
+  },
+  "license": "MIT",
+  "author": "IGLANGUAGE Team",
+  "type": "module"
+}

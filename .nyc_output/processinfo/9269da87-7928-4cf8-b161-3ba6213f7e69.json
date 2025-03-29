@@ -1,0 +1,1 @@
+{"parent":null,"pid":9456,"argv":["/usr/local/share/nvm/versions/node/v20.19.0/bin/node","/home/codespace/nvm/current/bin/npm","test"],"execArgv":[],"cwd":"/workspaces/IGL-core","time":1743203813481,"ppid":9445,"coverageFilename":"/workspaces/IGL-core/.nyc_output/9269da87-7928-4cf8-b161-3ba6213f7e69.json","externalId":"","uuid":"9269da87-7928-4cf8-b161-3ba6213f7e69","files":[]}

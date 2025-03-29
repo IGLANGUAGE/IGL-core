@@ -1,0 +1,32 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Check License
+        run: |
+          if [ ! -f "LICENSE" ]; then
+            echo "::error::❌ License file missing"
+            exit 1
+          fi
+          if ! grep -q "MIT License" LICENSE; then
+            echo "::error::❌ Invalid license header"
+            exit 1
+          fi
+          echo "✔ License validation passed"
+      - name: Check License Headers
+        run: npm run check:license
